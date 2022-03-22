@@ -54,11 +54,11 @@ export class UserController {
   @UseGuards(AuthGuard)
   async updateCurrentUser(
     @User('id') currentUserId: number,
-    @Body('user') UpdateUserDto: UpdateUserDto,
+    @Body('user') updateUserDto: UpdateUserDto,
   ): Promise<UserResponseInterface> {
     const user = await this.userService.updateUser(
       currentUserId,
-      UpdateUserDto,
+      updateUserDto,
     );
     return this.userService.buildUserResponse(user);
   }
