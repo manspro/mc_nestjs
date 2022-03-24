@@ -25,8 +25,9 @@ export class ArticleService {
 
     queryBuilder.orderBy('articles.createdAt', 'DESC');
 
-    const articles = await queryBuilder.getMany();
     const articlesCount = await queryBuilder.getCount();
+
+    const articles = await queryBuilder.getMany();
 
     return { articles, articlesCount };
   }
