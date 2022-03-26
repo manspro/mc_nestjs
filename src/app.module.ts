@@ -1,4 +1,4 @@
-import { ArticleController } from './article/article.controller';
+import { ProfileModule } from './profile/profile.module';
 import { ArticleModule } from './article/article.module';
 import { UserModule } from './user/user.module';
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
@@ -15,6 +15,7 @@ import { AuthMiddleware } from './user/middlewares/auth.middleware';
     TagModule,
     UserModule,
     ArticleModule,
+    ProfileModule,
   ],
   controllers: [AppController],
   providers: [AppService],
