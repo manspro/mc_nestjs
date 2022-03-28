@@ -18,7 +18,6 @@ import {
 import { User } from '@app/user/decorators/user.decorators';
 import { ArticleResponseInterface } from './types/articleResponse.interface';
 import { ArticlesResponseInterface } from './types/articlesRespponse.interface';
-import { query } from 'express';
 
 @Controller('articles')
 export class ArticleController {
