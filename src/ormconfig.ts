@@ -7,7 +7,7 @@ const config: ConnectionOptions = {
   username: 'mediumclone',
   password: 'postgres',
   database: 'mediumclone',
-  entities: [__dirname + '/**/*.entity{.ts,.js}'], //текущая директория+компиляция кода ts/js
+  entities: [__dirname + '/**/*.entity{.ts,.js}'],
   synchronize: false,
   migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
   cli: {

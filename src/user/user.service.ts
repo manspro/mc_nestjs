@@ -40,7 +40,7 @@ export class UserService {
       throw new HttpException(errorResponse, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    const newUser = new UserEntity(); //экземпляр созданного нового юзера
+    const newUser = new UserEntity();
     Object.assign(newUser, createUserDto);
     return await this.userRepository.save(newUser);
   }
@@ -82,11 +82,11 @@ export class UserService {
 
   async updateUser(
     userId: number,
-    updateUserDto: UpdateUserDto, //updateUserDto - это данные, которые мы хотим обновить у пользователя
+    updateUserDto: UpdateUserDto,
   ): Promise<UserEntity> {
     const user = await this.findById(userId);
     Object.assign(user, updateUserDto);
-    return await this.userRepository.save(user); //save- для создания новых записей и обновления
+    return await this.userRepository.save(user);
   }
 
   generateJwt(user: UserEntity): string {
@@ -100,7 +100,6 @@ export class UserService {
     );
   }
 
-  //функиця отвественная за ответ для клиента
   buildUserResponse(user: UserEntity): UserResponseInterface {
     return {
       user: {

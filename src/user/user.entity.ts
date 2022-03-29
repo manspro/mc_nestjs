@@ -38,7 +38,7 @@ export class UserEntity {
   @OneToMany(() => ArticleEntity, (article) => article.author)
   articles: ArticleEntity[];
 
-  @ManyToMany(() => ArticleEntity) //связь многие ко многим с таблицей постов
-  @JoinTable() //декторатор используется, чтобы создалась таблица для отношения многим ко многим
-  favorites: ArticleEntity[]; //массив статей, который пользователь залайкал
+  @ManyToMany(() => ArticleEntity)
+  @JoinTable()
+  favorites: ArticleEntity[];
 }

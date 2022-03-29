@@ -28,8 +28,8 @@ export class UserController {
   async createUser(
     @Body('user') createUserDto: CreateUserDto,
   ): Promise<UserResponseInterface> {
-    const user = await this.userService.createUser(createUserDto); // здесь получаем userEntity, который мы создали в БД
-    return this.userService.buildUserResponse(user); // нормализируем для клиента
+    const user = await this.userService.createUser(createUserDto);
+    return this.userService.buildUserResponse(user);
   }
 
   @Post('users/login')
@@ -42,10 +42,10 @@ export class UserController {
   }
 
   @Get('user')
-  @UseGuards(AuthGuard) //проверка залогинены или нет
+  @UseGuards(AuthGuard)
   async currentUser(
     @Req() request: ExpressRequestInterface,
-    @User() user: UserEntity, //создали декторатор User и локальную переменную для его использования
+    @User() user: UserEntity,
   ): Promise<UserResponseInterface> {
     return this.userService.buildUserResponse(user);
   }
